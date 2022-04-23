@@ -11,4 +11,6 @@ void delete_context(struct AppState *cx);
 
 struct AppState *new_context(void);
 
-void setup_surface(struct AppState *cx, void *ca_layer_ptr);
+void render(struct AppState *state, float width, float height, float scale);
+
+void setup_surface(struct AppState *state, void *ca_layer_ptr);
