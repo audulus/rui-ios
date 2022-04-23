@@ -1,5 +1,5 @@
-use rui::*;
 use futures::executor::block_on;
+use rui::*;
 
 // Ultimately we'd like to use swift-bridge, once it's ready.
 
@@ -45,6 +45,9 @@ async fn setup(ca_layer_ptr: *mut core::ffi::c_void) -> Setup {
         wgpu::util::initialize_adapter_from_env_or_default(&instance, backend, Some(&surface))
             .await
             .expect("No suitable GPU adapters found on the system!");
+
+    let adapter_info = adapter.get_info();
+    println!("Using {} ({:?})", adapter_info.name, adapter_info.backend);
 
     let trace_dir = std::env::var("WGPU_TRACE");
     let (device, queue) = adapter
