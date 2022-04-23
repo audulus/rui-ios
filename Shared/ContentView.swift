@@ -1,6 +1,7 @@
 
 import SwiftUI
 import Metal
+import QuartzCore
 
 struct MetalLayerView: UIViewRepresentable {
 
@@ -8,7 +9,14 @@ struct MetalLayerView: UIViewRepresentable {
 
     func makeUIView(context: Context) -> UIView {
         let view = UIView()
-        view.layer.addSublayer(CAMetalLayer())
+
+        var metalLayer = CAMetalLayer()
+
+        withUnsafeMutablePointer(to: &metalLayer) { ptr in
+            setup_surface(appState, ptr)
+        }
+
+        view.layer.addSublayer(metalLayer)
         return view
     }
 
