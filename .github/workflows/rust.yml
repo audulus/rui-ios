@@ -12,5 +12,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: Install cargo-lipo
+      run: cargo install cargo-lipo
     - name: Build
       run: cargo lipo
