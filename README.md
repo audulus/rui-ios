@@ -3,6 +3,7 @@ Demo of rui embedded on iOS
 
 To run:
 
-1. `cargo lipo` (install cargo lipo if necessary)
-2. Open Xcode project
-3. Run
+1. `cargo install cargo-lipo`
+1. `cargo lipo`
+1. Open Xcode project
+1. Run
