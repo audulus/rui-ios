@@ -12,6 +12,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: Add iOS archs
+      run: rustup target add aarch64-apple-ios x86_64-apple-ios
     - name: Install cargo-lipo
       run: cargo install cargo-lipo
     - name: Build
