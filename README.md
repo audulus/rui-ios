@@ -8,3 +8,7 @@ To run:
 1. `cargo lipo`
 1. Open Xcode project
 1. Run
+
+re-generate the rui-ios.h with
+
+`cbindgen --config cbindgen.toml --crate rui-ios --output rui-ios.h`
