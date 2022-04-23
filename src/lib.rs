@@ -1,18 +1,25 @@
 use futures::executor::block_on;
 use rui::*;
+use vger::*;
 
 // Ultimately we'd like to use swift-bridge, once it's ready.
+
+fn my_ui() -> impl View {
+    vstack(("Hello", "world"))
+}
 
 pub struct AppState {
     cx: Context,
     setup: Option<Setup>,
+    config: Option<wgpu::SurfaceConfiguration>,
+    vger: Option<Vger>,
 }
 
 // We want to use https://docs.rs/wgpu/0.3.0/wgpu/struct.Instance.html#method.create_surface_from_core_animation_layer
 
 impl AppState {
     pub fn new() -> Self {
-        Self { cx: Context::new(), setup: None }
+        Self { cx: Context::new(), setup: None, config: None, vger: None }
     }
 }
 
@@ -72,10 +79,42 @@ async fn setup(ca_layer_ptr: *mut core::ffi::c_void) -> Setup {
 }
 
 #[no_mangle]
-pub extern "C" fn setup_surface(cx: *mut AppState, ca_layer_ptr: *mut core::ffi::c_void) {
-    let cx = unsafe { cx.as_mut().unwrap() };
+pub extern "C" fn setup_surface(state: *mut AppState, ca_layer_ptr: *mut core::ffi::c_void) {
+    let state = unsafe { state.as_mut().unwrap() };
 
     println!("ca_layer_ptr: {:?}", ca_layer_ptr);
 
-    cx.setup = Some(block_on(setup(unsafe { * (ca_layer_ptr as *mut *mut core::ffi::c_void) })));
+    let setup = block_on(setup(unsafe { * (ca_layer_ptr as *mut *mut core::ffi::c_void) }));
+
+    let config = wgpu::SurfaceConfiguration {
+        usage: wgpu::TextureUsages::RENDER_ATTACHMENT,
+        format: setup.surface.get_preferred_format(&setup.adapter).unwrap(),
+        width: 1024,
+        height: 768,
+        present_mode: wgpu::PresentMode::Mailbox,
+    };
+    setup.surface.configure(&setup.device, &config);
+
+    state.setup = Some(setup);
+    state.config = Some(config);
+    
+}
+
+#[no_mangle]
+pub extern "C" fn render(state: *mut AppState, width: f32, height: f32, scale: f32) {
+    let state = unsafe { state.as_mut().unwrap() };
+
+    if let Some(setup) = &state.setup {
+        state.cx.render(
+            &setup.device,
+            &setup.surface,
+            &state.config.as_ref().unwrap(),
+            &setup.queue,
+            &my_ui(),
+            &mut state.vger.as_mut().unwrap(),
+            [width, height].into(),
+            scale,
+        );
+    }
+    
 }
