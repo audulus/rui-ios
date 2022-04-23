@@ -5,13 +5,14 @@ use rui::*;
 
 pub struct AppState {
     cx: Context,
+    setup: Option<Setup>,
 }
 
 // We want to use https://docs.rs/wgpu/0.3.0/wgpu/struct.Instance.html#method.create_surface_from_core_animation_layer
 
 impl AppState {
     pub fn new() -> Self {
-        Self { cx: Context::new() }
+        Self { cx: Context::new(), setup: None }
     }
 }
 
@@ -72,9 +73,9 @@ async fn setup(ca_layer_ptr: *mut core::ffi::c_void) -> Setup {
 
 #[no_mangle]
 pub extern "C" fn setup_surface(cx: *mut AppState, ca_layer_ptr: *mut core::ffi::c_void) {
-    let cx = unsafe { cx.as_mut() };
+    let cx = unsafe { cx.as_mut().unwrap() };
 
     println!("ca_layer_ptr: {:?}", ca_layer_ptr);
 
-    let setup = block_on(setup(unsafe { * (ca_layer_ptr as *mut *mut core::ffi::c_void) }));
+    cx.setup = Some(block_on(setup(unsafe { * (ca_layer_ptr as *mut *mut core::ffi::c_void) })));
 }
