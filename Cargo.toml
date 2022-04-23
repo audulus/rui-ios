@@ -7,6 +7,7 @@ edition = "2021"
 
 [build-dependencies]
 swift-bridge-build = "0.1.31"
+cbindgen = "0.23.0"
 
 [dependencies]
 rui = { version = "0.3.0", default-features = false }
