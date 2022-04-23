@@ -12,9 +12,7 @@ struct MetalLayerView: UIViewRepresentable {
 
         var metalLayer = CAMetalLayer()
 
-        withUnsafeMutablePointer(to: &metalLayer) { ptr in
-            setup_surface(appState, ptr)
-        }
+        setup_surface(appState, &metalLayer)
 
         view.layer.addSublayer(metalLayer)
         return view

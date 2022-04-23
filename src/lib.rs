@@ -68,8 +68,10 @@ async fn setup(ca_layer_ptr: *mut core::ffi::c_void) -> Setup {
 }
 
 #[no_mangle]
-pub extern "C" fn setup_surface(cx: *mut AppState, ca_layer_ptr: *mut core::ffi::c_void) {
+pub extern "C" fn setup_surface(cx: *mut AppState, ca_layer_ptr: *mut *mut core::ffi::c_void) {
     let cx = unsafe { cx.as_mut() };
 
-    let setup = block_on(setup(ca_layer_ptr));
+    println!("ca_layer_ptr: {:?}", ca_layer_ptr);
+
+    let setup = block_on(setup(unsafe { *ca_layer_ptr }));
 }
