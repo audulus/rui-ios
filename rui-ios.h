@@ -10,3 +10,5 @@ typedef struct AppState AppState;
 void delete_context(struct AppState *cx);
 
 struct AppState *new_context(void);
+
+void setup_surface(struct AppState *cx, void *ca_layer_ptr);
