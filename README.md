@@ -1,2 +1,2 @@
 # rui-ios
-Demo of rui embedded on iOS
+Demo of rui embedded on iOS (and macOS)
