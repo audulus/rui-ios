@@ -11,12 +11,3 @@ pub extern fn new_context() -> *mut Context {
 pub extern fn delete_context(cx: *mut Context) {
     unsafe { Box::from_raw(cx); }
 }
-
-#[cfg(test)]
-mod tests {
-    #[test]
-    fn it_works() {
-        let result = 2 + 2;
-        assert_eq!(result, 4);
-    }
-}
