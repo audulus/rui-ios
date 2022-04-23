@@ -7,13 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2957DA5C281472A90010A362 /* librui_ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2957DA5A281472640010A362 /* librui_ios.a */; };
+		2957DA6B28148BEF0010A362 /* librui_ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2957DA5A281472640010A362 /* librui_ios.a */; };
 		29DEE522281465C9000C3626 /* RuiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DEE50E281465C8000C3626 /* RuiApp.swift */; };
-		29DEE523281465C9000C3626 /* RuiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DEE50E281465C8000C3626 /* RuiApp.swift */; };
 		29DEE526281465C9000C3626 /* MetalLayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DEE510281465C8000C3626 /* MetalLayerView.swift */; };
-		29DEE527281465C9000C3626 /* MetalLayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DEE510281465C8000C3626 /* MetalLayerView.swift */; };
 		29DEE528281465C9000C3626 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29DEE511281465C9000C3626 /* Assets.xcassets */; };
-		29DEE529281465C9000C3626 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29DEE511281465C9000C3626 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,7 +21,6 @@
 		29DEE511281465C9000C3626 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		29DEE516281465C9000C3626 /* rui-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "rui-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		29DEE519281465C9000C3626 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		29DEE51E281465C9000C3626 /* rui-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "rui-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		29DEE520281465C9000C3626 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		29DEE521281465C9000C3626 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -34,14 +30,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2957DA5C281472A90010A362 /* librui_ios.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		29DEE51B281465C9000C3626 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				2957DA6B28148BEF0010A362 /* librui_ios.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,7 +71,6 @@
 			isa = PBXGroup;
 			children = (
 				29DEE516281465C9000C3626 /* rui-ios.app */,
-				29DEE51E281465C9000C3626 /* rui-ios.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -124,23 +112,6 @@
 			productReference = 29DEE516281465C9000C3626 /* rui-ios.app */;
 			productType = "com.apple.product-type.application";
 		};
-		29DEE51D281465C9000C3626 /* rui-ios (macOS) */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 29DEE52F281465C9000C3626 /* Build configuration list for PBXNativeTarget "rui-ios (macOS)" */;
-			buildPhases = (
-				29DEE51A281465C9000C3626 /* Sources */,
-				29DEE51B281465C9000C3626 /* Frameworks */,
-				29DEE51C281465C9000C3626 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "rui-ios (macOS)";
-			productName = "rui-ios (macOS)";
-			productReference = 29DEE51E281465C9000C3626 /* rui-ios.app */;
-			productType = "com.apple.product-type.application";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -152,9 +123,6 @@
 				LastUpgradeCheck = 1330;
 				TargetAttributes = {
 					29DEE515281465C9000C3626 = {
-						CreatedOnToolsVersion = 13.3.1;
-					};
-					29DEE51D281465C9000C3626 = {
 						CreatedOnToolsVersion = 13.3.1;
 					};
 				};
@@ -173,7 +141,6 @@
 			projectRoot = "";
 			targets = (
 				29DEE515281465C9000C3626 /* rui-ios (iOS) */,
-				29DEE51D281465C9000C3626 /* rui-ios (macOS) */,
 			);
 		};
 /* End PBXProject section */
@@ -187,14 +154,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		29DEE51C281465C9000C3626 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				29DEE529281465C9000C3626 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -204,15 +163,6 @@
 			files = (
 				29DEE522281465C9000C3626 /* RuiApp.swift in Sources */,
 				29DEE526281465C9000C3626 /* MetalLayerView.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		29DEE51A281465C9000C3626 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				29DEE523281465C9000C3626 /* RuiApp.swift in Sources */,
-				29DEE527281465C9000C3626 /* MetalLayerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,6 +306,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/target/universal/release",
+					"$(PROJECT_DIR)/target/universal/debug",
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.audulus.rui-ios";
@@ -393,6 +344,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/target/universal/release",
+					"$(PROJECT_DIR)/target/universal/debug",
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.audulus.rui-ios";
@@ -402,72 +354,6 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		29DEE530281465C9000C3626 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = J6F2XLS3BY;
-				ENABLE_HARDENED_RUNTIME = YES;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = macOS/Info.plist;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/target/universal/release",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 12.3;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.audulus.rui-ios";
-				PRODUCT_NAME = "rui-ios";
-				SDKROOT = macosx;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		29DEE531281465C9000C3626 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = J6F2XLS3BY;
-				ENABLE_HARDENED_RUNTIME = YES;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = macOS/Info.plist;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/target/universal/release",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 12.3;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.audulus.rui-ios";
-				PRODUCT_NAME = "rui-ios";
-				SDKROOT = macosx;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -488,15 +374,6 @@
 			buildConfigurations = (
 				29DEE52D281465C9000C3626 /* Debug */,
 				29DEE52E281465C9000C3626 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		29DEE52F281465C9000C3626 /* Build configuration list for PBXNativeTarget "rui-ios (macOS)" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				29DEE530281465C9000C3626 /* Debug */,
-				29DEE531281465C9000C3626 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
