@@ -2,12 +2,14 @@ use rui::*;
 
 // Ultimately we'd like to use swift-bridge, once it's ready.
 
-use std::alloc::{self, Layout};
-
 #[no_mangle]
 pub extern fn new_context() -> *mut Context {
-    let ptr = unsafe { alloc::alloc(Layout::new::<Context>()) };
-    ptr as *mut Context
+    Box::into_raw(Box::new(Context::new()))
+}
+
+#[no_mangle]
+pub extern fn delete_context(cx: *mut Context) {
+    unsafe { Box::from_raw(cx); }
 }
 
 #[cfg(test)]
