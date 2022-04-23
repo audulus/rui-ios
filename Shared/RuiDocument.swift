@@ -9,8 +9,19 @@ extension UTType {
     }
 }
 
+class AppModel {
+    var appState = new_context()
+
+    init() {}
+
+    deinit {
+        delete_context(appState)
+    }
+}
+
 struct RuiDocument: FileDocument {
     var text: String
+    var model = AppModel()
 
     init(text: String = "Hello, world!") {
         self.text = text
