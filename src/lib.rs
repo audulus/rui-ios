@@ -14,10 +14,12 @@ impl AppState {
 
 #[no_mangle]
 pub extern fn new_context() -> *mut AppState {
+    println!("creating rui context");
     Box::into_raw(Box::new(AppState::new()))
 }
 
 #[no_mangle]
 pub extern fn delete_context(cx: *mut AppState) {
+    println!("deleting rui context");
     unsafe { Box::from_raw(cx); }
 }
