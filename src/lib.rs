@@ -6,6 +6,8 @@ pub struct AppState {
     cx: Context
 }
 
+// We want to use https://docs.rs/wgpu/0.3.0/wgpu/struct.Instance.html#method.create_surface_from_core_animation_layer
+
 impl AppState {
     pub fn new() -> Self {
         Self{ cx: Context::new() }
