@@ -95,6 +95,8 @@ pub extern "C" fn setup_surface(state: *mut AppState, ca_layer_ptr: *mut core::f
     };
     setup.surface.configure(&setup.device, &config);
 
+    state.vger = Some(Vger::new(&setup.device, wgpu::TextureFormat::Bgra8UnormSrgb));
+
     state.setup = Some(setup);
     state.config = Some(config);
     
