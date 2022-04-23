@@ -1,11 +1,26 @@
 
 import SwiftUI
+import Metal
+
+struct MetalLayerView: UIViewRepresentable {
+
+    func makeUIView(context: Context) -> UIView {
+        let view = UIView()
+        view.layer.addSublayer(CAMetalLayer())
+        return view
+    }
+
+    func updateUIView(_ uiView: UIView, context: Context) {
+        // do nothing
+    }
+
+}
 
 struct ContentView: View {
     @Binding var document: RuiDocument
 
     var body: some View {
-        TextEditor(text: $document.text)
+        MetalLayerView()
     }
 }
 
