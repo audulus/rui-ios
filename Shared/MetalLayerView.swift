@@ -20,6 +20,11 @@ struct MetalLayerView: UIViewRepresentable {
 
     func updateUIView(_ uiView: UIView, context: Context) {
         // do nothing
+        print("updateUIView")
+
+        let size = uiView.frame.size
+        let scale = uiView.contentScaleFactor
+        render(appState, Float(size.width), Float(size.height), Float(scale))
     }
 
 }
