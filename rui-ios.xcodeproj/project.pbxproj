@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2957DA5C281472A90010A362 /* librui_ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2957DA5A281472640010A362 /* librui_ios.a */; };
 		29DEE522281465C9000C3626 /* RuiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DEE50E281465C8000C3626 /* RuiApp.swift */; };
 		29DEE523281465C9000C3626 /* RuiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DEE50E281465C8000C3626 /* RuiApp.swift */; };
 		29DEE524281465C9000C3626 /* RuiDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DEE50F281465C8000C3626 /* RuiDocument.swift */; };
@@ -18,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2957DA5A281472640010A362 /* librui_ios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = librui_ios.a; path = target/universal/release/librui_ios.a; sourceTree = "<group>"; };
+		2957DA5D281472C60010A362 /* rui-ios.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "rui-ios.h"; sourceTree = SOURCE_ROOT; };
 		29DEE50E281465C8000C3626 /* RuiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuiApp.swift; sourceTree = "<group>"; };
 		29DEE50F281465C8000C3626 /* RuiDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuiDocument.swift; sourceTree = "<group>"; };
 		29DEE510281465C8000C3626 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -34,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2957DA5C281472A90010A362 /* librui_ios.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,13 +51,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2957DA59281472640010A362 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2957DA5A281472640010A362 /* librui_ios.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		29DEE508281465C7000C3626 = {
 			isa = PBXGroup;
 			children = (
+				2957DA5D281472C60010A362 /* rui-ios.h */,
 				29DEE50D281465C8000C3626 /* Shared */,
 				29DEE518281465C9000C3626 /* iOS */,
 				29DEE51F281465C9000C3626 /* macOS */,
 				29DEE517281465C9000C3626 /* Products */,
+				2957DA59281472640010A362 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -265,6 +279,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "rui-ios.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -316,6 +331,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OBJC_BRIDGING_HEADER = "rui-ios.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 			};
 			name = Release;
@@ -342,6 +358,10 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/target/universal/release",
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.audulus.rui-ios";
@@ -376,6 +396,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/target/universal/release",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.audulus.rui-ios";
 				PRODUCT_NAME = "rui-ios";
@@ -406,6 +430,10 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/target/universal/release",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 12.3;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.audulus.rui-ios";
@@ -434,6 +462,10 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/target/universal/release",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 12.3;
 				MARKETING_VERSION = 1.0;
