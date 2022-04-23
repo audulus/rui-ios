@@ -4,6 +4,8 @@ import Metal
 
 struct MetalLayerView: UIViewRepresentable {
 
+    var appState: OpaquePointer
+
     func makeUIView(context: Context) -> UIView {
         let view = UIView()
         view.layer.addSublayer(CAMetalLayer())
@@ -20,7 +22,7 @@ struct ContentView: View {
     @Binding var document: RuiDocument
 
     var body: some View {
-        MetalLayerView()
+        MetalLayerView(appState: document.model.appState)
     }
 }
 

@@ -10,7 +10,7 @@ extension UTType {
 }
 
 class AppModel {
-    var appState = new_context()
+    var appState = new_context()!
 
     init() {}
 
