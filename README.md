@@ -1,5 +1,5 @@
 # rui-ios
-Demo of rui embedded on iOS (and macOS)
+Demo of rui embedded on iOS
 
 To run:
 
