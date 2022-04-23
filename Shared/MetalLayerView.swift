@@ -26,16 +26,3 @@ struct MetalLayerView: UIViewRepresentable {
 
 }
 
-struct ContentView: View {
-    @Binding var document: RuiDocument
-
-    var body: some View {
-        MetalLayerView(appState: document.model.appState)
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView(document: .constant(RuiDocument()))
-    }
-}
