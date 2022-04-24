@@ -38,7 +38,8 @@ struct MetalLayerView: UIViewRepresentable {
         print("updateUIView")
 
         let size = uiView.frame.size
-        let scale = uiView.contentScaleFactor
+        let scale = UIScreen.main.scale
+        uiView.contentScaleFactor = scale
 
         print("uiView size: \(size)")
         print("scale: \(scale)")
