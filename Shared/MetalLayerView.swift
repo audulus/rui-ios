@@ -52,6 +52,8 @@ struct MetalLayerView: UIViewRepresentable {
             print("drawableSize: \(metalLayer.drawableSize)")
         }
 
+        update(appState, Float(size.width), Float(size.height))
+
         render(appState, Float(size.width), Float(size.height), Float(scale))
     }
 

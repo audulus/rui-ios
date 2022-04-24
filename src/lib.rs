@@ -103,6 +103,19 @@ pub extern "C" fn setup_surface(state: *mut AppState, ca_layer_ptr: *mut core::f
 }
 
 #[no_mangle]
+pub extern "C" fn update(state: *mut AppState, width: f32, height: f32) {
+    let state = unsafe { state.as_mut().unwrap() };
+    let mut access_nodes = vec![];
+
+    state.cx.update(
+        &my_ui(),
+        &mut state.vger.as_mut().unwrap(),
+        &mut access_nodes,
+        [width, height].into()
+    );
+}
+
+#[no_mangle]
 pub extern "C" fn render(state: *mut AppState, width: f32, height: f32, scale: f32) {
     let state = unsafe { state.as_mut().unwrap() };
 
