@@ -1,4 +1,4 @@
-!/bin/zsh
+#!/bin/zsh
 
 ##################################################
 # We call this from an Xcode run script.
