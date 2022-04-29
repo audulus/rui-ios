@@ -26,6 +26,20 @@ class Renderer: NSObject, MTKViewDelegate {
 
 }
 
+class RuiView: MTKView {
+    var appState: OpaquePointer
+
+    init(appState: OpaquePointer) {
+        self.appState = appState
+        super.init(frame: CGRect(x: 0, y: 0, width: 1024, height: 768),
+                   device: MTLCreateSystemDefaultDevice())
+    }
+
+    required init(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
 struct MetalLayerView: UIViewRepresentable {
 
     var appState: OpaquePointer
@@ -38,8 +52,8 @@ struct MetalLayerView: UIViewRepresentable {
         var renderer: Renderer?
     }
 
-    func makeUIView(context: Context) -> UIView {
-        let view = MTKView(frame: CGRect(x: 0, y: 0, width: 1024, height: 768), device: MTLCreateSystemDefaultDevice())
+    func makeUIView(context: Context) -> RuiView {
+        let view = RuiView(appState: appState)
         var metalLayer = view.layer as! CAMetalLayer
         setup_surface(appState, &metalLayer)
 
@@ -50,7 +64,7 @@ struct MetalLayerView: UIViewRepresentable {
         return view
     }
 
-    func updateUIView(_ uiView: UIView, context: Context) {
+    func updateUIView(_ uiView: RuiView, context: Context) {
         // do nothing
 
     }
