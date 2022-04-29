@@ -39,16 +39,49 @@ class RuiView: MTKView {
         fatalError("init(coder:) has not been implemented")
     }
 
+    // MARK: - Event Handling
+
+    /// Keep track of all the active touches so we can give them indices.
+    var touches: [UITouch?] = Array<UITouch?>(repeating: nil, count: 16)
+
+    func add(touch: UITouch) -> Int? {
+        for i in 0..<touches.count {
+            if touches[i] == nil {
+                touches[i] = touch
+                return i
+            }
+        }
+        return nil
+    }
+
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         print("touchesBegan")
+
+        for touch in touches {
+            if let index = add(touch: touch) {
+
+            }
+        }
     }
 
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         print("touchesMoved")
+
+        for index in 0..<self.touches.count {
+            if let touch = self.touches[index] {
+
+            }
+        }
     }
 
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         print("touchesEnded")
+
+        for index in 0..<self.touches.count {
+            if let touch = self.touches[index], touches.contains(touch) {
+                self.touches[index] = nil
+            }
+        }
     }
 }
 
