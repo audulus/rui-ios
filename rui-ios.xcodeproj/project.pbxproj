@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		2957DA6B28148BEF0010A362 /* librui_ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2957DA5A281472640010A362 /* librui_ios.a */; };
 		29DEE522281465C9000C3626 /* RuiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DEE50E281465C8000C3626 /* RuiApp.swift */; };
-		29DEE526281465C9000C3626 /* MetalLayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DEE510281465C8000C3626 /* MetalLayerView.swift */; };
+		29DEE526281465C9000C3626 /* RuiSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DEE510281465C8000C3626 /* RuiSwiftUIView.swift */; };
 		29DEE528281465C9000C3626 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29DEE511281465C9000C3626 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -17,7 +17,7 @@
 		2957DA5A281472640010A362 /* librui_ios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = librui_ios.a; path = target/universal/debug/librui_ios.a; sourceTree = "<group>"; };
 		2957DA5D281472C60010A362 /* rui-ios.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "rui-ios.h"; sourceTree = SOURCE_ROOT; };
 		29DEE50E281465C8000C3626 /* RuiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuiApp.swift; sourceTree = "<group>"; };
-		29DEE510281465C8000C3626 /* MetalLayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalLayerView.swift; sourceTree = "<group>"; };
+		29DEE510281465C8000C3626 /* RuiSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuiSwiftUIView.swift; sourceTree = "<group>"; };
 		29DEE511281465C9000C3626 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		29DEE516281465C9000C3626 /* rui-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "rui-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		29DEE519281465C9000C3626 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -61,7 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				29DEE50E281465C8000C3626 /* RuiApp.swift */,
-				29DEE510281465C8000C3626 /* MetalLayerView.swift */,
+				29DEE510281465C8000C3626 /* RuiSwiftUIView.swift */,
 				29DEE511281465C9000C3626 /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -162,7 +162,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				29DEE522281465C9000C3626 /* RuiApp.swift in Sources */,
-				29DEE526281465C9000C3626 /* MetalLayerView.swift in Sources */,
+				29DEE526281465C9000C3626 /* RuiSwiftUIView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
