@@ -18,5 +18,3 @@ jobs:
       run: cargo install cargo-lipo
     - name: Build
       run: cargo lipo
-    - name: Build with Xcode
-      run: xcodebuild
