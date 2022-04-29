@@ -99,6 +99,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 29DEE52C281465C9000C3626 /* Build configuration list for PBXNativeTarget "rui-ios (iOS)" */;
 			buildPhases = (
+				29C7AB09281CA61B00D19AAA /* Build Rust */,
 				29DEE512281465C9000C3626 /* Sources */,
 				29DEE513281465C9000C3626 /* Frameworks */,
 				29DEE514281465C9000C3626 /* Resources */,
@@ -155,6 +156,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		29C7AB09281CA61B00D19AAA /* Build Rust */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Build Rust";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# ./build-rust.sh\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		29DEE512281465C9000C3626 /* Sources */ = {
