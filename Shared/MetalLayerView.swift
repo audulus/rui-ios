@@ -40,7 +40,7 @@ class RuiView: MTKView {
     }
 }
 
-struct MetalLayerView: UIViewRepresentable {
+struct RuiSwiftUIView: UIViewRepresentable {
 
     var appState: OpaquePointer
 

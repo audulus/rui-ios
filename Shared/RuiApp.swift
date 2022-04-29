@@ -18,7 +18,7 @@ struct RuiApp: App {
 
     var body: some Scene {
         WindowGroup {
-            MetalLayerView(appState: model.appState)
+            RuiSwiftUIView(appState: model.appState)
         }
     }
 }
