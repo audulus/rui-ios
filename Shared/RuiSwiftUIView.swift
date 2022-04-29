@@ -38,6 +38,18 @@ class RuiView: MTKView {
     required init(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        print("touchesBegan")
+    }
+
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        print("touchesMoved")
+    }
+
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        print("touchesEnded")
+    }
 }
 
 struct RuiSwiftUIView: UIViewRepresentable {
@@ -54,6 +66,7 @@ struct RuiSwiftUIView: UIViewRepresentable {
 
     func makeUIView(context: Context) -> RuiView {
         let view = RuiView(appState: appState)
+        view.isMultipleTouchEnabled = true
         var metalLayer = view.layer as! CAMetalLayer
         setup_surface(appState, &metalLayer)
 
