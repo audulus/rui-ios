@@ -37,6 +37,16 @@ pub extern "C" fn delete_context(cx: *mut AppState) {
     }
 }
 
+#[swift_bridge::bridge]
+mod ffi {
+   extern "Rust" {
+      type AppState;
+
+      #[swift_bridge(init)]
+      fn new() -> AppState;
+   }
+}
+
 struct Setup {
     surface: wgpu::Surface,
     adapter: wgpu::Adapter,
