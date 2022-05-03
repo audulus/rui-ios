@@ -94,3 +94,7 @@ iOSInjectionProject/
 
 /target
 /Cargo.lock
+
+# swift-bridge generated files
+
+Generated
