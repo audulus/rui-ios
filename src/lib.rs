@@ -23,7 +23,7 @@ impl AppState {
     
         println!("ca_layer_ptr: {:?}", ca_layer_ptr);
     
-        let setup = block_on(setup(unsafe { * (ca_layer_ptr as *mut *mut core::ffi::c_void) }));
+        let setup = block_on(setup(unsafe { * (ca_layer_ptr as *mut *mut c_void) }));
     
         let config = wgpu::SurfaceConfiguration {
             usage: wgpu::TextureUsages::RENDER_ATTACHMENT,
