@@ -2,13 +2,9 @@
 import SwiftUI
 
 class AppModel {
-    var appState = new_context()!
+    var appState = AppState()
 
     init() {}
-
-    deinit {
-        delete_context(appState)
-    }
 }
 
 @main

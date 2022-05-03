@@ -6,9 +6,9 @@ import MetalKit
 
 class Renderer: NSObject, MTKViewDelegate {
 
-    var appState: OpaquePointer
+    var appState: AppState
 
-    init(appState: OpaquePointer) {
+    init(appState: AppState) {
         self.appState = appState
     }
 
@@ -19,17 +19,16 @@ class Renderer: NSObject, MTKViewDelegate {
     func draw(in view: MTKView) {
         let size = view.frame.size
         let scale = view.contentScaleFactor
-        update(appState, Float(size.width), Float(size.height))
-        render(appState, Float(size.width), Float(size.height), Float(scale))
+        appState.update(Float(size.width), Float(size.height))
+        appState.render(Float(size.width), Float(size.height), Float(scale))
     }
-
 
 }
 
 class RuiView: MTKView {
-    var appState: OpaquePointer
+    var appState: AppState
 
-    init(appState: OpaquePointer) {
+    init(appState: AppState) {
         self.appState = appState
         super.init(frame: CGRect(x: 0, y: 0, width: 1024, height: 768),
                    device: MTLCreateSystemDefaultDevice())
@@ -87,7 +86,7 @@ class RuiView: MTKView {
 
 struct RuiSwiftUIView: UIViewRepresentable {
 
-    var appState: OpaquePointer
+    var appState: AppState
 
     func makeCoordinator() -> Coordinator {
         Coordinator()
@@ -101,7 +100,7 @@ struct RuiSwiftUIView: UIViewRepresentable {
         let view = RuiView(appState: appState)
         view.isMultipleTouchEnabled = true
         var metalLayer = view.layer as! CAMetalLayer
-        setup_surface(appState, &metalLayer)
+        appState.setup_surface(&metalLayer)
 
         let renderer = Renderer(appState: appState)
         context.coordinator.renderer = renderer

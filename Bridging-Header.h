@@ -3,6 +3,6 @@
 #define Bridging_Header_h
 
 #include "Generated/SwiftBridgeCore.h"
-#include "Generated/ios-rust-analyzer/ios-rust-analyzer.h"
+#include "Generated/rui-ios/rui-ios.h"
 
 #endif /* Bridging_Header_h */

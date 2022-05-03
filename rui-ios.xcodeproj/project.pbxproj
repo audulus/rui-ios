@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		293B43652821D0A80085DC2C /* SwiftBridgeCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293B43642821D0630085DC2C /* SwiftBridgeCore.swift */; };
+		293B43662821D0AA0085DC2C /* rui-ios.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293B43612821D0630085DC2C /* rui-ios.swift */; };
 		2957DA6B28148BEF0010A362 /* librui_ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2957DA5A281472640010A362 /* librui_ios.a */; };
 		29DEE522281465C9000C3626 /* RuiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DEE50E281465C8000C3626 /* RuiApp.swift */; };
 		29DEE526281465C9000C3626 /* RuiSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DEE510281465C8000C3626 /* RuiSwiftUIView.swift */; };
@@ -15,6 +17,10 @@
 
 /* Begin PBXFileReference section */
 		293B43582821CD890085DC2C /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		293B43612821D0630085DC2C /* rui-ios.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "rui-ios.swift"; sourceTree = "<group>"; };
+		293B43622821D0630085DC2C /* rui-ios.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "rui-ios.h"; sourceTree = "<group>"; };
+		293B43632821D0630085DC2C /* SwiftBridgeCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftBridgeCore.h; sourceTree = "<group>"; };
+		293B43642821D0630085DC2C /* SwiftBridgeCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftBridgeCore.swift; sourceTree = "<group>"; };
 		2957DA5A281472640010A362 /* librui_ios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = librui_ios.a; path = target/universal/debug/librui_ios.a; sourceTree = "<group>"; };
 		2957DA5D281472C60010A362 /* rui-ios.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "rui-ios.h"; sourceTree = SOURCE_ROOT; };
 		29DEE50E281465C8000C3626 /* RuiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuiApp.swift; sourceTree = "<group>"; };
@@ -38,6 +44,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		293B435F2821D0630085DC2C /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				293B43602821D0630085DC2C /* rui-ios */,
+				293B43632821D0630085DC2C /* SwiftBridgeCore.h */,
+				293B43642821D0630085DC2C /* SwiftBridgeCore.swift */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
+		293B43602821D0630085DC2C /* rui-ios */ = {
+			isa = PBXGroup;
+			children = (
+				293B43612821D0630085DC2C /* rui-ios.swift */,
+				293B43622821D0630085DC2C /* rui-ios.h */,
+			);
+			path = "rui-ios";
+			sourceTree = "<group>";
+		};
 		2957DA59281472640010A362 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -51,6 +76,7 @@
 			children = (
 				2957DA5D281472C60010A362 /* rui-ios.h */,
 				293B43582821CD890085DC2C /* Bridging-Header.h */,
+				293B435F2821D0630085DC2C /* Generated */,
 				29DEE50D281465C8000C3626 /* Shared */,
 				29DEE518281465C9000C3626 /* iOS */,
 				29DEE51F281465C9000C3626 /* macOS */,
@@ -185,6 +211,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				293B43662821D0AA0085DC2C /* rui-ios.swift in Sources */,
+				293B43652821D0A80085DC2C /* SwiftBridgeCore.swift in Sources */,
 				29DEE522281465C9000C3626 /* RuiApp.swift in Sources */,
 				29DEE526281465C9000C3626 /* RuiSwiftUIView.swift in Sources */,
 			);
@@ -247,7 +275,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OBJC_BRIDGING_HEADER = "rui-ios.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -299,7 +327,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OBJC_BRIDGING_HEADER = "rui-ios.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 			};
 			name = Release;
