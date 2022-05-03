@@ -14,6 +14,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		293B43582821CD890085DC2C /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		2957DA5A281472640010A362 /* librui_ios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = librui_ios.a; path = target/universal/debug/librui_ios.a; sourceTree = "<group>"; };
 		2957DA5D281472C60010A362 /* rui-ios.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "rui-ios.h"; sourceTree = SOURCE_ROOT; };
 		29DEE50E281465C8000C3626 /* RuiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuiApp.swift; sourceTree = "<group>"; };
@@ -49,6 +50,7 @@
 			isa = PBXGroup;
 			children = (
 				2957DA5D281472C60010A362 /* rui-ios.h */,
+				293B43582821CD890085DC2C /* Bridging-Header.h */,
 				29DEE50D281465C8000C3626 /* Shared */,
 				29DEE518281465C9000C3626 /* iOS */,
 				29DEE51F281465C9000C3626 /* macOS */,
