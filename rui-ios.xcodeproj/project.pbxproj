@@ -174,7 +174,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# ./build-rust.sh\n";
+			shellScript = "./build-rust.sh\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
