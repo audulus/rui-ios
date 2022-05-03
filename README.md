@@ -1,5 +1,5 @@
 # rui-ios
-Demo of rui embedded on iOS
+Demo of [rui](https://github.com/audulus/rui) embedded on iOS
 
 To run:
 
