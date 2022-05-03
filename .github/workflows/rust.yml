@@ -17,4 +17,4 @@ jobs:
     - name: Install cargo-lipo
       run: cargo install cargo-lipo
     - name: Build
-      run: cargo lipo
+      run: PROJECT_DIR="${PWD}" ./build-rust.sh 
