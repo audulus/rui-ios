@@ -54,13 +54,11 @@ class RuiView: MTKView {
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        print("touchesBegan")
-
         for touch in touches {
             if let index = add(touch: touch) {
                 let p = touch.location(in: self)
                 let appEvent = AppEvent(x: Float(p.x),
-                                        y: Float(p.y),
+                                        y: Float(bounds.size.height - p.y),
                                         id: UInt(index),
                                         kind: .TouchBegin)
                 appState.process(appEvent)
@@ -69,13 +67,11 @@ class RuiView: MTKView {
     }
 
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        print("touchesMoved")
-
         for index in 0..<self.touches.count {
             if let touch = self.touches[index] {
                 let p = touch.location(in: self)
                 let appEvent = AppEvent(x: Float(p.x),
-                                        y: Float(p.y),
+                                        y: Float(bounds.size.height - p.y),
                                         id: UInt(index),
                                         kind: .TouchMove)
                 appState.process(appEvent)
@@ -84,14 +80,12 @@ class RuiView: MTKView {
     }
 
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        print("touchesEnded")
-
         for index in 0..<self.touches.count {
             if let touch = self.touches[index], touches.contains(touch) {
 
                 let p = touch.location(in: self)
                 let appEvent = AppEvent(x: Float(p.x),
-                                        y: Float(p.y),
+                                        y: Float(bounds.size.height - p.y),
                                         id: UInt(index),
                                         kind: .TouchEnd)
                 appState.process(appEvent)
