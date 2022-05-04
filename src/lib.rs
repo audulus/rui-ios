@@ -72,6 +72,21 @@ impl AppState {
             );
         }
     }
+
+    fn process(&mut self, event: AppEvent) {
+        let rui_event = match event {
+            AppEvent::TouchBegin { id, x, y } => Event::TouchBegin { id, position: [x,y].into() },
+            AppEvent::TouchMove { id, x, y } => Event::TouchMove { id, position: [x,y].into() },
+            AppEvent::TouchEnd { id, x, y } => Event::TouchMove { id, position: [x,y].into() },
+        };
+        self.cx.process(&my_ui(), &rui_event, &mut self.vger.as_mut().unwrap())
+    }
+}
+
+pub enum AppEvent {
+    TouchBegin { id: usize, x: f32, y: f32 },
+    TouchMove { id: usize, x: f32, y: f32 },
+    TouchEnd { id: usize, x: f32, y: f32 }
 }
 
 #[swift_bridge::bridge]
