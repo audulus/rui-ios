@@ -73,24 +73,35 @@ impl AppState {
         }
     }
 
-    fn process(&mut self, event: AppEvent) {
-        let rui_event = match event {
-            AppEvent::TouchBegin { id, x, y } => Event::TouchBegin { id, position: [x,y].into() },
-            AppEvent::TouchMove { id, x, y } => Event::TouchMove { id, position: [x,y].into() },
-            AppEvent::TouchEnd { id, x, y } => Event::TouchMove { id, position: [x,y].into() },
+    fn process(&mut self, event: ffi::AppEvent) {
+        let position = LocalPoint::from([event.x,event.y]);
+        let id = event.id;
+        let rui_event = match event.kind {
+            ffi::AppEventKind::TouchBegin => Event::TouchBegin { id, position },
+            ffi::AppEventKind::TouchMove => Event::TouchMove { id, position },
+            ffi::AppEventKind::TouchEnd => Event::TouchMove { id, position },
         };
         self.cx.process(&my_ui(), &rui_event, &mut self.vger.as_mut().unwrap())
     }
 }
 
-pub enum AppEvent {
-    TouchBegin { id: usize, x: f32, y: f32 },
-    TouchMove { id: usize, x: f32, y: f32 },
-    TouchEnd { id: usize, x: f32, y: f32 }
-}
-
 #[swift_bridge::bridge]
 mod ffi {
+
+    pub enum AppEventKind {
+        TouchBegin,
+        TouchMove,
+        TouchEnd
+    }
+
+    #[swift_bridge(swift_repr = "struct")]
+    pub struct AppEvent {
+        x: f32,
+        y: f32,
+        id: usize,
+        kind: AppEventKind
+    }
+
     extern "Rust" {
         type AppState;
 
@@ -100,6 +111,7 @@ mod ffi {
         fn setup_surface(&mut self, ca_layer_ptr: *mut c_void);
         fn update(&mut self, width: f32, height: f32);
         fn render(&mut self, width: f32, height: f32, scale: f32);
+        fn process(&mut self, event: AppEvent);
     }
 }
 
