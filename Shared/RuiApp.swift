@@ -14,7 +14,10 @@ struct RuiApp: App {
 
     var body: some Scene {
         WindowGroup {
-            RuiSwiftUIView(appState: model.appState)
+            ZStack {
+                Rectangle().fill(.black).edgesIgnoringSafeArea(.all)
+                RuiSwiftUIView(appState: model.appState)
+            }
         }
     }
 }
