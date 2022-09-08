@@ -7,3 +7,5 @@ To run:
 1. `cargo install cargo-lipo`
 1. Open Xcode project
 1. Run
+
+<img src="screenshot.png" alt="screenshot" style="width:50%;">
