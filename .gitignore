@@ -98,3 +98,6 @@ iOSInjectionProject/
 # swift-bridge generated files
 
 Generated
+
+# macOS turds
+.DS_Store
