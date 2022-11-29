@@ -78,7 +78,7 @@ impl AppState {
 
         let config = wgpu::SurfaceConfiguration {
             usage: wgpu::TextureUsages::RENDER_ATTACHMENT,
-            format: setup.surface.get_preferred_format(&setup.adapter).unwrap(),
+            format: setup.surface.get_supported_formats(&setup.adapter)[0],
             width: 1024,
             height: 768,
             present_mode: wgpu::PresentMode::Mailbox,
@@ -108,10 +108,12 @@ impl AppState {
     pub fn render(&mut self, width: f32, height: f32, scale: f32) {
         if let Some(setup) = &self.setup {
             self.cx.render(
-                &setup.device,
-                &setup.surface,
-                &self.config.as_ref().unwrap(),
-                &setup.queue,
+                RenderInfo {
+                    device: &setup.device,
+                    surface: &setup.surface,
+                    config: &self.config.as_ref().unwrap(),
+                    queue: &setup.queue,
+                },
                 &my_ui(),
                 &mut self.vger.as_mut().unwrap(),
                 [width, height].into(),
@@ -128,7 +130,7 @@ impl AppState {
             ffi::AppEventKind::TouchMove => Event::TouchMove { id, position },
             ffi::AppEventKind::TouchEnd => Event::TouchMove { id, position },
         };
-        self.cx.process(&my_ui(), &rui_event, &mut self.vger.as_mut().unwrap())
+        self.cx.process(&my_ui(), &rui_event)
     }
 }
 
