@@ -81,7 +81,7 @@ impl AppState {
             format: setup.surface.get_supported_formats(&setup.adapter)[0],
             width: 1024,
             height: 768,
-            present_mode: wgpu::PresentMode::Mailbox,
+            present_mode: wgpu::PresentMode::Fifo,
         };
         setup.surface.configure(&setup.device, &config);
 
@@ -190,7 +190,7 @@ async fn setup(ca_layer_ptr: *mut core::ffi::c_void) -> Setup {
             &wgpu::DeviceDescriptor {
                 label: None,
                 features: wgpu::Features::default(),
-                limits: wgpu::Limits::default(),
+                limits: adapter.limits(),
             },
             trace_dir.ok().as_ref().map(std::path::Path::new),
         )
